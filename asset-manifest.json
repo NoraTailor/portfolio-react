@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/portfolio-react/static/css/main.e7acdf8d.css",
+    "main.js": "/portfolio-react/static/js/main.3f829cc7.js",
+    "static/media/self.jpg": "/portfolio-react/static/media/self.6ad0e748ccdcdec43833.jpg",
+    "static/media/spitz.png": "/portfolio-react/static/media/spitz.20a81ea5c192ad396e33.png",
+    "static/media/todo app.jpg": "/portfolio-react/static/media/todo app.1417962b3943ebb8a435.jpg",
+    "static/media/clock picture.jpg": "/portfolio-react/static/media/clock picture.b27479d7c239321af83f.jpg",
+    "static/media/calculator-pic.jpg": "/portfolio-react/static/media/calculator-pic.549e68bc9657ec74ba7f.jpg",
+    "index.html": "/portfolio-react/index.html",
+    "main.e7acdf8d.css.map": "/portfolio-react/static/css/main.e7acdf8d.css.map",
+    "main.3f829cc7.js.map": "/portfolio-react/static/js/main.3f829cc7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e7acdf8d.css",
+    "static/js/main.3f829cc7.js"
+  ]
+}
