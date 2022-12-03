@@ -20,7 +20,18 @@ const Projects = () => {
 									alt={project.name}
 								/>
 							</div>
-							<a href={project.url}>Check it out!</a>
+							<ul className='urls'>
+								<li>
+									<a href={project.onWebUrl}>
+										Check it out!
+									</a>
+								</li>
+								<li>
+									<a href={project.githubLink}>
+										Github Repo
+									</a>
+								</li>
+							</ul>
 						</section>
 					);
 				})}

@@ -1,37 +1,63 @@
-import React, { useState } from 'react';
-
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { FaRegCopyright } from 'react-icons/fa';
+import Popup from './Popup';
 
 const Contact = () => {
-	const [formStatus, setFormStatus] = useState('Send');
+	const form = useRef();
+	const [isSent, setIsSent] = useState(false);
 
-	const onSubmit = (e) => {
+	const sendEmail = (e) => {
 		e.preventDefault();
-		setFormStatus('Submitting');
-		const { name, email, message } = e.target.elements;
-		let data = {
-			name: name.value,
-			email: email.value,
-			message: message.value,
-		};
+
+		emailjs
+			.sendForm(
+				'service_07dwc1a',
+				'contact_form',
+				form.current,
+				'gdfHmSLlpFwJv4k1C'
+			)
+			.then((result) => {
+				if (result.ok) {
+					return (
+						<Popup
+							trigger={() => setIsSent(true)}
+							setTrigger={setIsSent}>
+							<h3>I got your email</h3>
+						</Popup>
+					);
+				} else {
+					return (
+						<Popup
+							trigger={isSent}
+							setTrigger={setIsSent(false)}>
+							<h3>
+								Sorry there was a problem. Please try again
+								later.
+							</h3>
+						</Popup>
+					);
+				}
+			});
 	};
+
 	return (
 		<section className='page last-page' id='contact-page'>
 			<div className='title'>Contact me</div>
 			<div className='contact-container'>
 				<div className='contact'>
-					<form onSubmit={onSubmit}>
+					<form ref={form} onSubmit={sendEmail}>
 						<label htmlFor='name'>Name</label>
 						<input
 							type='text'
-							name='name'
+							name='user_name'
 							id='name'
 							required
 						/>
 						<label htmlFor='email'>Email</label>
 						<input
 							type='email'
-							name='mail'
+							name='user_email'
 							id='email'
 							required
 						/>
@@ -41,7 +67,9 @@ const Contact = () => {
 							id='message'
 							required
 						/>
-						<button type='submit'>Submit</button>
+						<button type='submit' value='Send'>
+							Submit
+						</button>
 					</form>
 				</div>
 			</div>

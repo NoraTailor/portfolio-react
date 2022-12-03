@@ -17,13 +17,9 @@ const Main = () => {
 	const handleClick = (e) =>
 		setIsActive((current) => !current);
 
-	const handleMouseleave = () => {
-		setIsActive(false);
-	};
-
 	return (
 		<div className='first-page' id='home'>
-			<div
+			<button
 				className={
 					isActive
 						? 'navbar-icon-pos nav-bar-icon'
@@ -31,40 +27,49 @@ const Main = () => {
 				}
 				onClick={handleClick}>
 				{isActive ? <AiOutlineClose /> : <FaBars />}
-			</div>
+			</button>
 			<nav
-				onMouseLeave={handleMouseleave}
 				className={
 					isActive ? 'nav-bar active-navbar' : 'nav-bar'
 				}>
 				<div className='nav-bar-links-container'>
-					<a href='#home'>
-						<AiOutlineHome className='icon' />
-						Home
-					</a>
-					<a href='#skill-page'>
-						<FaCodeBranch className='icon' /> Skills
-					</a>
-					<a href='#project-page'>
-						<FaLaptopCode className='icon' /> projects
-					</a>
-					<a href='#contact-page'>
-						<GrContact className='icon' /> contact
-					</a>
+					<ul>
+						<li>
+							<a href='#home'>
+								<AiOutlineHome className='icon' />
+								Home
+							</a>
+						</li>
+						<li>
+							<a href='#skill-page'>
+								<FaCodeBranch className='icon' /> Skills
+							</a>
+						</li>
+						<li>
+							<a href='#project-page'>
+								<FaLaptopCode className='icon' /> projects
+							</a>
+						</li>
+						<li>
+							<a href='#contact-page'>
+								<GrContact className='icon' /> contact
+							</a>
+						</li>
+					</ul>
 				</div>
 			</nav>
 			<div className='main-content-container'>
 				<img className='image' src={mainPic} alt='self' />
 				<div className='main-text-container'>
 					<h3>Welcome, I am </h3>
-					<h1>Name</h1>
-					<p>
+					<h1>Nora Szabo</h1>
+					<h2>
 						I am a self-taught frontend developer applicant,
 						and my passion is to become a successful
 						frontend developer
-					</p>
+					</h2>
 					<div className='social-media'>
-						<a href='www.linkedin.com/in/nora-szabo-934005230'>
+						<a href='https://www.linkedin.com/in/nora-szabo-934005230'>
 							<AiOutlineLinkedin />
 						</a>
 						<a href='https://github.com/NoraTailor'>
