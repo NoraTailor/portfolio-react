@@ -7,9 +7,11 @@ const Contact = () => {
 	const form = useRef();
 	const [isSent, setIsSent] = useState(false);
 
+	const [popupText, setPopupText] = useState('');
+
 	const sendEmail = (e) => {
 		e.preventDefault();
-
+		setIsSent(true);
 		emailjs
 			.sendForm(
 				'service_07dwc1a',
@@ -18,25 +20,13 @@ const Contact = () => {
 				'gdfHmSLlpFwJv4k1C'
 			)
 			.then((result) => {
-				if (result.ok) {
-					return (
-						<Popup
-							trigger={() => setIsSent(true)}
-							setTrigger={setIsSent}>
-							<h3>I got your email</h3>
-						</Popup>
+				console.log(result);
+				if (result.status > 199 && result.status < 300) {
+					setPopupText(
+						'I got you email, I will answer you '
 					);
 				} else {
-					return (
-						<Popup
-							trigger={isSent}
-							setTrigger={setIsSent(false)}>
-							<h3>
-								Sorry there was a problem. Please try again
-								later.
-							</h3>
-						</Popup>
-					);
+					setPopupText('Something went wrong');
 				}
 			});
 	};
@@ -67,12 +57,21 @@ const Contact = () => {
 							id='message'
 							required
 						/>
-						<button type='submit' value='Send'>
+						<button
+							type='submit'
+							value='Send'
+							onClick={() => setIsSent(true)}>
 							Submit
 						</button>
 					</form>
 				</div>
 			</div>
+			<Popup
+				trigger={isSent}
+				setTrigger={setIsSent}
+				style={{ color: 'white' }}>
+				<h3>{popupText}</h3>
+			</Popup>
 			<div className='dog'></div>
 			<footer>
 				<FaRegCopyright />
