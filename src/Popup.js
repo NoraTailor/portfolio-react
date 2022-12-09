@@ -6,7 +6,8 @@ function Popup(props) {
 			<div className='popup-inner'>
 				<button
 					className='close-btn'
-					onClick={() => props.setTrigger(false)}>
+					onClick={() => props.setTrigger(false)}
+					style={{ cursor: 'pointer' }}>
 					close
 				</button>
 				{props.children}

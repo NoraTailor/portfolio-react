@@ -23,7 +23,7 @@ const Contact = () => {
 				console.log(result);
 				if (result.status > 199 && result.status < 300) {
 					setPopupText(
-						'I got you email, I will answer you '
+						'I got your email, I will answer you soon '
 					);
 				} else {
 					setPopupText('Something went wrong');
@@ -66,12 +66,15 @@ const Contact = () => {
 					</form>
 				</div>
 			</div>
-			<Popup
-				trigger={isSent}
-				setTrigger={setIsSent}
-				style={{ color: 'white' }}>
-				<h3>{popupText}</h3>
-			</Popup>
+			{popupText && (
+				<Popup
+					trigger={isSent}
+					setTrigger={setIsSent}
+					style={{ color: 'white' }}>
+					<h3>{popupText}</h3>
+				</Popup>
+			)}
+
 			<div className='dog'></div>
 			<footer>
 				<FaRegCopyright />

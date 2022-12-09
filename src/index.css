@@ -99,7 +99,7 @@ body {
 	width: 50%;
 	position: fixed;
 	background-color: var(--navbar-background);
-	transition: all 2s ease-in-out;
+	transition: all 1s ease-in-out;
 	transform: translateX(-100%);
 	padding-top: 4rem;
 }
@@ -114,8 +114,8 @@ body {
 
 .nav-bar-icon {
 	position: fixed;
-	left: 14%;
-	top: 2rem;
+	left: 10%;
+	top: 1rem;
 	z-index: 5;
 	height: 4rem;
 	font-size: 2rem;
@@ -124,14 +124,15 @@ body {
 }
 
 .navbar-icon-pos {
-	left: 10rem;
-	top: 1rem;
+	left: 9rem;
+	top: -1rem;
 	font-size: 2rem;
 }
 
 .nav-bar-links-container {
 	display: flex;
 	justify-content: center;
+	margin-top: 5rem;
 }
 
 ul {
@@ -140,7 +141,7 @@ ul {
 	justify-content: space-around;
 	align-items: stretch;
 	text-transform: uppercase;
-	height: 100%;
+	height: 25rem;
 }
 
 li a {
@@ -288,13 +289,13 @@ h2 {
 	border-radius: 24px;
 	margin-bottom: 1rem;
 	margin: auto;
-	width: 200px;
-	height: 150px;
+	width: 300px;
+	height: 180px;
 }
 
 .project-name {
 	text-transform: capitalize;
-	font-size: 2rem;
+	font-size: 1.8rem;
 }
 
 section a {
@@ -307,7 +308,7 @@ section a {
 }
 .urls li {
 	list-style-type: none;
-	margin-top: 2rem;
+	padding: 0.3rem;
 	margin-left: -2rem;
 }
 
@@ -474,7 +475,6 @@ span {
 		padding-left: 2rem;
 		padding-right: 2rem;
 		grid-template-columns: repeat(3, 1fr);
-
 		column-gap: 2rem;
 	}
 
@@ -483,19 +483,8 @@ span {
 		margin-bottom: 1rem;
 	}
 
-	.project-name {
-		margin-bottom: 1rem;
-	}
-	.project div:nth-child(2) {
-		height: 150px;
-	}
-
-	.urls {
-		height: 15%;
-	}
 	.urls li {
 		list-style-type: none;
-		margin-top: 0.8rem;
 		margin-left: -2rem;
 	}
 	/*contact page */ /*be kell fejezni holnap */
@@ -552,7 +541,6 @@ span {
 
 	.navbar-icon-pos {
 		left: 20%;
-
 		font-size: 2.2rem;
 	}
 }
