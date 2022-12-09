@@ -9,6 +9,7 @@ import { TbBrandVisualStudio } from 'react-icons/tb';
 import clock from './img/clock picture.jpg';
 import todo from './img/todo app.jpg';
 import calculator from './img/calculator-pic.jpg';
+import faq from './img/faq-img.jpg';
 
 export const SkillsData = [
 	{
@@ -65,5 +66,14 @@ export const ProjectsData = [
 		img: todo,
 		onWebUrl: 'https://noratailor.github.io/todoapp/',
 		githubLink: 'https://github.com/NoraTailor/todoapp',
+	},
+	{
+		id: 4,
+		name: 'FAQ page',
+		img: faq,
+		onWebUrl:
+			'https://noratailor.github.io/faq-accordion-card-main/',
+		githubLink:
+			'https://github.com/NoraTailor/faq-accordion-card-main',
 	},
 ];
