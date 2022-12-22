@@ -1,5 +1,5 @@
 import React from 'react';
-import { SkillsData } from './data';
+import { SkillsData } from '../data';
 import styled from 'styled-components';
 
 const Skills = () => {

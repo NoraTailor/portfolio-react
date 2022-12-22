@@ -1,8 +1,8 @@
 import { AiOutlineLinkedin } from 'react-icons/ai';
 import { FiGithub } from 'react-icons/fi';
 import styled from 'styled-components';
-import Navbar from './Navbar';
-import mainPic from './img/self.jpg';
+import Navbar from '../Components/Navbar';
+import mainPic from '../img/self.jpg';
 
 const Main = () => {
 	return (
@@ -52,6 +52,7 @@ const Wrapper = styled.section`
 	.image {
 		flex: 1;
 		padding: 1rem;
+		width: 80%;
 		border-radius: 24px;
 		margin: auto;
 		margin-bottom: 1rem;
@@ -107,7 +108,6 @@ const Wrapper = styled.section`
 			width: 25rem;
 			margin-top: 0;
 			margin-bottom: 0;
-
 			margin: auto;
 		}
 
@@ -122,6 +122,7 @@ const Wrapper = styled.section`
 		.social-media {
 			display: flex;
 			flex-direction: row;
+			margin-left: 2rem;
 		}
 	}
 `;

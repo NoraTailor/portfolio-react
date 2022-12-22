@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
-import Popup from './Popup';
+import Popup from '../Components/Popup';
 import styled from 'styled-components';
-import Footer from './Footer';
+import Footer from '../Components/Footer';
 
 const Contact = () => {
 	const form = useRef();

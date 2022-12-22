@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ProjectsData } from './data';
+import { ProjectsData } from '../data';
 
 const Projects = () => {
 	return (
@@ -14,8 +14,7 @@ const Projects = () => {
 								<img
 									className='project-img'
 									src={project.img}
-									alt={project.name}
-								/>
+									alt={project.name}></img>
 							</div>
 							<div className='project-name'>
 								{project.name}
