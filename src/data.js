@@ -10,6 +10,7 @@ import clock from './img/clock picture.jpg';
 import todo from './img/todo app.jpg';
 import calculator from './img/calculator-pic.jpg';
 import faq from './img/faq-img.jpg';
+import quote from './img/quote-generator.jpg';
 
 export const SkillsData = [
 	{
@@ -75,5 +76,13 @@ export const ProjectsData = [
 			'https://noratailor.github.io/faq-accordion-card-main/',
 		githubLink:
 			'https://github.com/NoraTailor/faq-accordion-card-main',
+	},
+	{
+		id: 5,
+		name: 'quote generator',
+		img: quote,
+		onWebUrl: 'https://quotes-generator-nsz.netlify.app/',
+		githubLink:
+			'https://github.com/NoraTailor/quote-generator',
 	},
 ];
