@@ -79,7 +79,7 @@ const Wrapper = styled.section`
 		}
 
 		.skill {
-			width: 50%;
+			width: 40%;
 		}
 	}
 `;
