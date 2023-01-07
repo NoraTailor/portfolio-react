@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import spitz from '../img/spitz.png';
 
 import Popup from '../Components/Popup';
 import styled from 'styled-components';
@@ -33,9 +34,26 @@ const Contact = () => {
 			});
 	};
 
+	const handleMouseEnter = () => {
+		const bubble = document.querySelector('.bubble');
+		bubble.classList.add('bubble-active');
+		console.log(bubble);
+	};
+
+	const handleMouseLeave = () => {
+		const bubble = document.querySelector('.bubble');
+		bubble.classList.remove('bubble-active');
+		console.log(bubble);
+	};
+
+	const handleClick = () => {
+		const bubble = document.querySelector('.bubble');
+		bubble.classList.toggle('bubble-active');
+	};
+
 	return (
 		<Wrapper className='page last-page' id='contact-page'>
-			<div className='title'>Contact me</div>
+			<h1 className='title'>Contact me</h1>
 			<div className='contact-container'>
 				<div className='contact'>
 					<form ref={form} onSubmit={sendEmail}>
@@ -76,8 +94,12 @@ const Contact = () => {
 					<h3>{popupText}</h3>
 				</Popup>
 			)}
-
-			<div className='dog'></div>
+			<p className='bubble'>Wuf, wuf</p>
+			<div
+				className='dog'
+				onMouseOver={handleMouseEnter}
+				onMouseLeave={handleMouseLeave}
+				onClick={handleClick}></div>
 			<Footer />
 		</Wrapper>
 	);
@@ -97,7 +119,7 @@ const Wrapper = styled.section`
 
 	.contact-container {
 		background-color: var(--section-background);
-		width: 80vw;
+		width: 70vw;
 		column-gap: 3rem;
 		height: 100%;
 		max-width: 800px;
@@ -120,7 +142,7 @@ const Wrapper = styled.section`
 
 	label {
 		margin-top: 2rem;
-		font-size: 1.3rem;
+		font-size: 1rem;
 	}
 
 	input {
@@ -150,12 +172,47 @@ const Wrapper = styled.section`
 	}
 
 	.dog {
-		background: url('/src/img/spitz.png') no-repeat;
+		background: url(${spitz}) no-repeat;
 		background-size: 50px;
 		width: 50px;
 		height: 50px;
 		position: relative;
 		left: 70%;
+	}
+
+	.bubble {
+		position: relative;
+		width: 25%;
+		text-align: center;
+		background-color: #fff;
+		visibility: hidden;
+		border-radius: 30px;
+		font-family: sans-serif;
+		padding: 0.5rem;
+		font-size: 1rem;
+		left: 60%;
+	}
+
+	.bubble-active {
+		visibility: visible;
+	}
+
+	.bubble::before {
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 0;
+	}
+
+	.bubble::before {
+		content: '';
+		position: absolute;
+		border-left: 10px solid transparent;
+		border-right: 10px solid white;
+		border-top: 10px solid white;
+		border-bottom: 10px solid transparent;
+		top: 2rem;
+		right: 4rem;
 	}
 
 	@media screen and (min-width: 768px) {
@@ -177,8 +234,7 @@ const Wrapper = styled.section`
 		input:-webkit-autofill:hover,
 		input:-webkit-autofill:focus,
 		input:-webkit-autofill:active {
-			-webkit-box-shadow: 0 0 0 30px
-				var(--section-background) inset !important;
+			box-shadow: 0 0 0 30px var(--section-background) inset !important;
 		}
 
 		.dog {
@@ -191,6 +247,15 @@ const Wrapper = styled.section`
 		.title {
 			font-size: 2.5rem;
 			margin-bottom: 5rem;
+		}
+		.bubble {
+			width: 15%;
+			left: 80%;
+		}
+		.bubble::before {
+			content: '';
+			top: 2rem;
+			right: 3rem;
 		}
 	}
 `;

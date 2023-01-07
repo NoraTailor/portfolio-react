@@ -5,8 +5,10 @@ import styled from 'styled-components';
 export default function Footer() {
 	return (
 		<Wrapper>
-			<FaRegCopyright />
-			Nora Szabo <span>2022</span>
+			<FaRegCopyright className='icon' />
+			<h3>
+				Nora Szabo <span>{new Date().getFullYear()}</span>
+			</h3>
 		</Wrapper>
 	);
 }
@@ -19,10 +21,17 @@ const Wrapper = styled.footer`
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	font-size: 1.3rem;
+	font-weight: 0;
+
+	.icon {
+		font-size: 0.8rem;
+	}
+
+	h3 {
+		font-size: 0.9rem;
+	}
 
 	span {
 		font-style: italic;
-		margin-left: 0.5rem;
 	}
 `;

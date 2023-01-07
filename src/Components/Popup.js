@@ -20,17 +20,15 @@ function Popup(props) {
 }
 
 const Wrapper = styled.div`
-	.popup {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100vh;
-		background-color: rgba(0, 0, 0, 0.2);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.2);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	.popup-inner {
 		position: relative;
@@ -41,9 +39,9 @@ const Wrapper = styled.div`
 		color: var(--main-background);
 	}
 
-	.popup .close-btn {
+	.close-btn {
 		position: absolute;
-		top: 16px;
+		top: 2px;
 		right: 16px;
 	}
 `;

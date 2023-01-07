@@ -5,14 +5,15 @@ import styled from 'styled-components';
 const Skills = () => {
 	return (
 		<Wrapper className='page' id='skill-page'>
-			<div className='title'>My Skills:</div>
+			<h1 className='title'>My Skills:</h1>
+
 			<div className='skills-container'>
 				{SkillsData.map((skill) => {
 					return (
-						<section className='skill' key={skill.id}>
-							<div className='skill-name'>{skill.name}</div>
+						<div className='skill' key={skill.id}>
 							<div className='skill-img'>{skill.img}</div>
-						</section>
+							<div className='skill-name'>{skill.name}</div>
+						</div>
 					);
 				})}
 			</div>
@@ -23,6 +24,7 @@ const Skills = () => {
 const Wrapper = styled.section`
 	margin-top: 7rem;
 	min-height: 80vh;
+	min-height: 50vh;
 
 	.title {
 		text-align: center;
@@ -35,29 +37,36 @@ const Wrapper = styled.section`
 		grid-template-columns: 1fr, 1fr;
 		margin: auto;
 		grid-auto-rows: 100px;
-		width: 50%;
-		background-color: antiquewhite;
+		width: 60%;
+		justify-items: center;
+		row-gap: 1rem;
 		padding: 2rem;
 		border-radius: 54px;
 		column-gap: 1rem;
 	}
 
 	.skill {
-		max-width: 100%;
 		display: grid;
 		justify-content: center;
-	}
-
-	.skill:nth-child(5) .skill-img {
-		margin-left: 1rem;
+		background-color: antiquewhite;
+		border-radius: 24px;
+		width: 70%;
+		height: 90%;
+		margin-top: 1rem;
+		align-items: center;
+		box-shadow: 1px 2px gray;
 	}
 
 	.skill-img {
 		font-size: 3rem;
+		margin-bottom: -1rem;
+		width: 50px;
+		height: 60px;
+		margin: auto;
 	}
 
-	#skill-page {
-		min-height: 50vh;
+	.skill-name {
+		text-align: center;
 	}
 
 	@media screen and (min-width: 768px) {
@@ -67,6 +76,10 @@ const Wrapper = styled.section`
 		.title {
 			font-size: 2.5rem;
 			margin-bottom: 5rem;
+		}
+
+		.skill {
+			width: 50%;
 		}
 	}
 `;
